@@ -29,6 +29,7 @@ curl --location --request GET 'http://127.0.0.1:8000/api/v1/accounts'
 ```
 
 > Filter and sort using [Laravel Purity](https://abbasudo.github.io/laravel-purity/)
+> 
 > Example: `http://127.0.0.1:8000/api/v1/accounts?filters[login][$eq]=john&sort=id:desc`
 
 #### Get account by id
