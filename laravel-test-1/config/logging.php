@@ -126,6 +126,20 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+
+        'api' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/api.log'),
+            'level' => env('LOG_LEVEL', 'info'),
+            'replace_placeholders' => true,
+        ],
+
+        'api_error' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/api_error.log'),
+            'level' => env('LOG_LEVEL', 'error'),
+            'replace_placeholders' => true,
+        ]
     ],
 
 ];

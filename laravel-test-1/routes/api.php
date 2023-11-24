@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\V1\AccountController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['prefix' => 'v1'], function () {
+    Route::resource('accounts', AccountController::class);
+});
+
+// Catch all undefined routes
+Route::any('{any}', function () {
+    return response()->json(['message' => 'Not Found'], 404);
+})->where('any', '.*');

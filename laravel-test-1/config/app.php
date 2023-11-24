@@ -168,6 +168,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\TelescopeServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -185,4 +186,5 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+    'pagination_per_page' => env('PAGINATION_PER_PAGE', 20),
 ];
